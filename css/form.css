@@ -5,6 +5,19 @@ textarea:focus,
 button:focus {
     outline: none;
 }
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #28aac7;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
 .header{
     height: 200px;
     background-color: #b12a3d;
@@ -20,7 +33,7 @@ button:focus {
 .form_card{
     max-width: 1080px;
     margin: auto;
-    border: 1px solid rgba(128, 128, 128, 0.47);
+    border: 1px solid rgba(128, 128, 128, 0.09);
     padding: 20px;
     width: 100%;
     border-radius: 2px;
@@ -42,10 +55,16 @@ button:focus {
     margin-bottom: 15px;
     padding: 5px;
     border-left: 2px solid #28aac7;
+    -webkit-box-shadow: 1px 1px 29px 0px rgba(189,189,189,1);
+-moz-box-shadow: 1px 1px 29px 0px rgba(189,189,189,1);
+box-shadow: 1px 1px 29px 0px rgba(189,189,189,1);
 }
 
 .form_card .division{
     margin-bottom: 15px;
+}
+.form_card .button_container{
+    clear: both;
 }
 .form_card .button{
     height: 40px;
@@ -59,6 +78,8 @@ button:focus {
     margin-bottom: 15px;
     margin-top: 15px;
     cursor: pointer;
+    float: right;
+    width: 100%;
 }
 input[type="checkbox"] + label {
     color:#f2f2f2;
