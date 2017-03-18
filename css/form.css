@@ -18,6 +18,9 @@ input[type='radio']:checked:after {
     visibility: visible;
     border: 2px solid white;
 }
+input[type="checkbox"] + label {
+    color:#f2f2f2;
+}
 .header{
     height: 200px;
     background-color: #b12a3d;
@@ -64,7 +67,7 @@ box-shadow: 1px 1px 29px 0px rgba(189,189,189,1);
     margin-bottom: 15px;
 }
 .form_card .button_container{
-    clear: both;
+    text-align: right;
 }
 .form_card .button{
     height: 40px;
@@ -74,18 +77,18 @@ box-shadow: 1px 1px 29px 0px rgba(189,189,189,1);
     text-align: center;
     border-radius: 5px;
     max-width: 110px;
-    padding-top: 5px;
     margin-bottom: 15px;
     margin-top: 15px;
-    cursor: pointer;
-    float: right;
     width: 100%;
+    border: none;
 }
-input[type="checkbox"] + label {
-    color:#f2f2f2;
+.form_card span{
+    margin-left: 5px;
+    position: relative;
+    top: -2px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 940px) {
     .division .col-sm-6{
         margin-bottom: 10px;
     }
