@@ -1,5 +1,23 @@
 
-/*validation form*/
+function errorMessage(ageData,childrenData){
+            $(".messageError").css("display", "blok").fadeIn(600);
+            console.log("ERROR SEND");
+
+            if(ageData){
+                $(".ageError").fadeOut(200);
+            }else if($("#age").val()){
+                $(".ageError").css("display", "blok").fadeIn(200);
+            }else{
+
+            };
+
+            if(childrenData == false && $('input:radio[name=children]:checked').val() == "Si"){
+                $("#childrenNumber").css("background", "rgba(177, 42, 61, 0.1)");
+                $("#childrenNumber").css("border-left", "2px solid #b12a3d");
+            }
+}
+
+// send form
 function sendFrom(){
         $("#validationForm").validate({
             rule:{
@@ -76,17 +94,10 @@ function sendFrom(){
             algoritmo
             */
         }else{
-            $(".messageError").css("display", "blok").fadeIn(600);
-            console.log("ERROR SEND");
-            if(ageData){
-                $(".ageError").fadeOut(200);
-            }else if($("#age").val()){
-                $(".ageError").css("display", "blok").fadeIn(200);
-            }else{
-
-            };
+            errorMessage(ageData,childrenData);
          };
 }
+
  /*childrenNumber validation*/
 var childrenNumber =$("#childrenNumber");
 childrenNumber.prop('disabled', true);
@@ -94,9 +105,12 @@ childrenNumber.prop('disabled', true);
 $(".children").click(function () {
 	if($('input:radio[name=children]:checked').val() == "Si"){
         childrenNumber.prop('disabled', false);
+        childrenNumber.css("background-color", "white");
     }else{
         childrenNumber.prop('disabled', true);
-        $('#childrenNumber').val(null) 
+        childrenNumber.val(null) ;
+        childrenNumber.css("background-color", "rgb(235, 235, 228)");
+        childrenNumber.css("border-left", "2px solid #28aac7");
     }
 });
 
