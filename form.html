@@ -12,22 +12,22 @@
             <form id="validationForm">
                 <div class="row">
                     <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6">
-                        <p>Nombre</p><input type="text"  class="input"  maxlength="30" name="name" required>
+                        <p>Nombre</p><input type="text"  class="input" minlength="3" maxlength="30" name="name" required>
                     </div>
                     <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6">
-                        <p>Apellido</p><input type="text" class="input"  maxlength="30">
+                        <p>Apellido</p><input type="text" class="input" name="lastName" minlength="3" maxlength="30"  required>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6"><p>DNI</p><input type="number" class="input"  maxlength="8"></div>
-                    <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6"><p>CIUT</p><input type="number" class="input"  maxlength="12"></div>
+                    <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6"><p>DNI</p><input type="number" class="input"  name="DNI" maxlength="8"  minlength="8" required></div>
+                    <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6"><p>CIUT</p><input type="number" class="input" name="CUIT" maxlength="11"  minlength="11" ></div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6">
-                        <p>Edad</p>
+                        <p>Edad <span class="ageError">(Entre 18 y 90 años únicamente)</span></p>
                     </div>
                     <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6">
-                    <input type="number" class="input"  maxlength="8">
+                        <input type="number" class="input" id="age" maxlength="2" minlength="1" name="age" required>
                     </div>
                 </div>
                 <div class="row">
@@ -35,35 +35,35 @@
                         <p>Ingreso Bruto mensual</p>
                     </div>
                     <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6">
-                    <input type="number" class="input"  maxlength="8">
+                        <input type="number" class="input"  name="salary" maxlength="6" minlength="3" required>
                     </div>
                 </div>
                 <div class="row division">
                     <div class="col-xs-6	col-sm-6	col-md-6 col-lg-6"><p>Estado civil</p></div>
                     <div class="col-xs-6	col-sm-6	col-md-6 col-lg-6">
-                        <div ><input type="radio" name="situation" value="Soltero"><span>Soltero/a</span>  </div>
-                        <div ><input type="radio" name="situation" value="Casado"><span>Casado/a</span>  </div>
-                        <div ><input type="radio" name="situation" value="Divorciado"><span>Divorciado/a</span>  </div>
-                        <div ><input type="radio" name="situation" value="Viudo"><span>Viudo/a</span>  </div>
+                        <div ><input type="radio" name="situation" value="Soltero" required><span>Soltero/a</span>  </div>
+                        <div ><input type="radio" name="situation" value="Casado" required><span>Casado/a</span>  </div>
+                        <div ><input type="radio" name="situation" value="Divorciado" required><span>Divorciado/a</span>  </div>
+                        <div ><input type="radio" name="situation" value="Viudo" required><span>Viudo/a</span>  </div>
                     </div>
                 </div>           
                 <div class="row division">
                     <div class="col-xs-6	col-sm-6	col-md-2 col-lg-2"><p>Sexo</p></div>
                     <div class="col-xs-6	col-sm-6	col-md-2 col-lg-2">
-                        <div ><input type="radio" name="sex" value="Masculino"><span>Masculino</span>  </div>
-                        <div ><input type="radio" name="sex" value="Femenino"><span>Femenino</span>  </div>
+                        <div ><input type="radio" name="sex" value="Masculino" required><span>Masculino</span>  </div>
+                        <div ><input type="radio" name="sex" value="Femenino" required><span>Femenino</span>  </div>
                     </div>
                     <div class="col-xs-6	col-sm-6	col-md-2 col-lg-2"><p>Hijos</p></div>
                     <div class="col-xs-6	col-sm-6	col-md-2 col-lg-2">
-                        <div ><input type="radio" name="children" value="Si"><span>Si</span>  </div>
-                        <div ><input type="radio" name="children" value="No"><span>No</span>  </div>
+                        <div ><input type="radio" name="children" value="Si" class="children" required><span>Si</span>  </div>
+                        <div ><input type="radio" name="children" value="No" class="children"  required><span>No</span>  </div>
                     </div>
-                    <div class="col-xs-6	col-sm-6	col-md-2 col-lg-1"><p>Cantidad</p></div>
+                    <div class="col-xs-6	col-sm-6	col-md-2 col-lg-1"><p>¿cuantos?</p></div>
                     <div class="col-xs-6	col-sm-6	col-md-2 col-lg-3">
-                        <input type="number" class="input">
+                        <input type="number" class="input" id="childrenNumber" name="childrenNumber" maxlength="2" minlength="1" >
                     </div>
                 </div> 
-                <div class="row">
+                <div class="row boxEmail">
                     <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6">
                         <p>Email</p>
                     </div>
@@ -71,9 +71,13 @@
                     <input type="email" class="input" id="email" name="email" required>
                     </div>
                 </div> 
-                <div class="button_container"><button class="button"  onclick="validate()">Enviar</button> </div>
-                       
             </form>
+             <div class="button_container">
+                 <div class="messageError">Todos los campos son obligatorios (a excepción del CIUT)</div>
+                 <div class="messageErrorData">Verificar los datos Ingresados</div>
+                 <button class="button"  onclick="sendFrom()">Enviar</button>
+             </div>
+               
          </div>
          <!--modules js-->
         <script src="modules/jquery-3.1.1.min.js"></script>

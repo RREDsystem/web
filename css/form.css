@@ -5,6 +5,7 @@ textarea:focus,
 button:focus {
     outline: none;
 }
+
 input[type='radio']:checked:after {
     width: 15px;
     height: 15px;
@@ -49,6 +50,10 @@ input[type="checkbox"] + label {
     -moz-box-shadow: 69px 101px 117px -48px rgba(176,176,176,1);
     box-shadow: 69px 101px 117px -48px rgba(176,176,176,1);
 }
+.form_card label{
+    display: none !important;/*hidden message error - jquery validation*/
+}
+
 .form_card .input{
     width: 100%;
     border-radius: 2px;
@@ -59,8 +64,8 @@ input[type="checkbox"] + label {
     padding: 5px;
     border-left: 2px solid #28aac7;
     -webkit-box-shadow: 1px 1px 29px 0px rgba(189,189,189,1);
--moz-box-shadow: 1px 1px 29px 0px rgba(189,189,189,1);
-box-shadow: 1px 1px 29px 0px rgba(189,189,189,1);
+    -moz-box-shadow: 1px 1px 29px 0px rgba(189,189,189,1);
+    box-shadow: 1px 1px 29px 0px rgba(189,189,189,1);
 }
 
 .form_card .division{
@@ -68,6 +73,7 @@ box-shadow: 1px 1px 29px 0px rgba(189,189,189,1);
 }
 .form_card .button_container{
     text-align: right;
+    position: relative;
 }
 .form_card .button{
     height: 40px;
@@ -78,21 +84,42 @@ box-shadow: 1px 1px 29px 0px rgba(189,189,189,1);
     border-radius: 5px;
     max-width: 110px;
     margin-bottom: 15px;
-    margin-top: 15px;
+    margin-top: 10px;
     width: 100%;
     border: none;
 }
-.form_card span{
+.form_card form span{
     margin-left: 5px;
     position: relative;
     top: -2px;
 }
+.form_card .boxEmail{
+    height: 78px;
+}
+.form_card #email-error{
+    display: block !important;
+    font-weight: normal;
+    background: transparent;
+    border-left: transparent;
+}
+.form_card .messageError, .messageErrorData{
+    display: none;
+    position: absolute;
+    padding-top: 10px;
+    color: red;
+}
+.form_card .ageError{
+    display: none;
+    color: red;
+}
 
+.form_card .error{
+    color: red;
+    background: rgba(177, 42, 61, 0.1);
+    border-left: 2px solid #b12a3d;
+}
 @media (max-width: 940px) {
     .division .col-sm-6{
         margin-bottom: 10px;
     }
 }
-
-
-
