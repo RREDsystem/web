@@ -12,10 +12,10 @@
             <form id="validationForm">
                 <div class="row">
                     <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6">
-                        <p>Nombre</p><input type="text"  class="input" minlength="3" maxlength="30" name="name" required>
+                        <p>Nombre</p><input type="text"  class="input" minlength="3" maxlength="30" name="name" onkeypress="return onKeyValidate(event)" required>
                     </div>
                     <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6">
-                        <p>Apellido</p><input type="text" class="input" name="lastName" minlength="3" maxlength="30"  required>
+                        <p>Apellido</p><input type="text" class="input" name="lastName" minlength="3" maxlength="30"  onkeypress="return onKeyValidate(event)" required>
                     </div>
                 </div>
                 <div class="row">
@@ -60,7 +60,7 @@
                     </div>
                     <div class="col-xs-6	col-sm-6	col-md-2 col-lg-1"><p>¿cuantos?</p></div>
                     <div class="col-xs-6	col-sm-6	col-md-2 col-lg-3">
-                        <input type="number" class="input" id="childrenNumber" name="childrenNumber" min="0" maxlength="2" minlength="1" >
+                        <input type="number" class="input" id="childrenNumber" name="childrenNumber" min="0" maxlength="2" minlength="1" required>
                     </div>
                 </div> 
                 <div class="row boxEmail">
@@ -74,6 +74,7 @@
             </form>
              <div class="button_container">
                  <div class="messageError">Todos los campos son obligatorios (a excepción del CUIT)</div>
+                 <div id="summary"></div>
                  <button class="button"  onclick="sendFrom()">Enviar</button>
              </div>
                
