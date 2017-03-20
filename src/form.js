@@ -1,20 +1,15 @@
 
-function errorMessage(ageData,childrenData){
-            $(".messageError").css("display", "blok").fadeIn(600);
-            console.log("ERROR SEND");
+function errorMessage(ageData){
+    $(".messageError").css("display", "blok").fadeIn(600);
+    console.log("ERROR SEND");
 
-            if(ageData){
-                $(".ageError").fadeOut(200);
-            }else if($("#age").val()){
-                $(".ageError").css("display", "blok").fadeIn(200);
-            }else{
+    if(ageData){
+        $(".ageError").fadeOut(200);
+    }else if($("#age").val()){
+        $(".ageError").css("display", "blok").fadeIn(200);
+    }else{
 
-            };
-
-            if(childrenData == false && $('input:radio[name=children]:checked').val() == "Si"){
-                $("#childrenNumber").css("background", "rgba(177, 42, 61, 0.1)");
-                $("#childrenNumber").css("border-left", "2px solid #b12a3d");
-            }
+    };
 }
 
 // send form
@@ -51,6 +46,21 @@ function sendFrom(){
                 }
                 
             },
+            rules: {
+                childrenNumber:{
+                    required:true,
+                    range: [1, 15]
+                },
+                DNI:{
+                    digits: true
+                },
+                CUIT:{
+                    digits: true
+                },
+                salary:{
+                    digits: true
+                }
+            },
             messages:{
                 name:"",
                 lastName:"",
@@ -85,16 +95,14 @@ function sendFrom(){
         });
 
         var ageData = $("#age").val()>= 18 && $("#age").val()<= 90;
-        var childrenData = (($('input:radio[name=children]:checked').val() == "Si") && $('#childrenNumber').val() > 0 && $('#childrenNumber').val() < 16) || $('input:radio[name=children]:checked').val() == "No";
-
-
-        if($("#validationForm").valid() && ageData && childrenData){
+       
+        if($("#validationForm").valid() && ageData ){
             console.log("send form")
             /*
             algoritmo
             */
         }else{
-            errorMessage(ageData,childrenData);
+            errorMessage(ageData);
          };
 }
 
@@ -105,7 +113,7 @@ childrenNumber.prop('disabled', true);
 $(".children").click(function () {
 	if($('input:radio[name=children]:checked').val() == "Si"){
         childrenNumber.prop('disabled', false);
-        childrenNumber.css("background-color", "white");
+       childrenNumber.css("background-color", "white");
     }else{
         childrenNumber.prop('disabled', true);
         childrenNumber.val(null) ;

@@ -19,15 +19,15 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6"><p>DNI</p><input type="number" class="input"  name="DNI" maxlength="8"  minlength="8" required></div>
-                    <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6"><p>CIUT</p><input type="number" class="input" name="CUIT" maxlength="11"  minlength="11" ></div>
+                    <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6"><p>DNI</p><input type="number" class="input"  name="DNI" min="0" maxlength="8"  minlength="8" required></div>
+                    <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6"><p>CIUT</p><input type="number" class="input" name="CUIT" min="0" maxlength="11"  minlength="11" ></div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6">
-                        <p>Edad <span class="ageError">(Entre 18 y 90 años únicamente)</span></p>
+                        <p>Edad <span class="ageError">(Recuerda que tienes que tener mas de 17 y menos de 90 años)</span></p>
                     </div>
                     <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6">
-                        <input type="number" class="input" id="age" maxlength="2" minlength="1" name="age" required>
+                        <input type="number" class="input" id="age" maxlength="2" min="0" minlength="1" name="age" required>
                     </div>
                 </div>
                 <div class="row">
@@ -35,7 +35,7 @@
                         <p>Ingreso Bruto mensual</p>
                     </div>
                     <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6">
-                        <input type="number" class="input"  name="salary" maxlength="6" minlength="3" required>
+                        <input type="number" class="input"  name="salary" maxlength="6" min="0" minlength="4" placeholder="$" required>
                     </div>
                 </div>
                 <div class="row division">
@@ -60,7 +60,7 @@
                     </div>
                     <div class="col-xs-6	col-sm-6	col-md-2 col-lg-1"><p>¿cuantos?</p></div>
                     <div class="col-xs-6	col-sm-6	col-md-2 col-lg-3">
-                        <input type="number" class="input" id="childrenNumber" name="childrenNumber" maxlength="2" minlength="1" >
+                        <input type="number" class="input" id="childrenNumber" name="childrenNumber" min="0" maxlength="2" minlength="1" >
                     </div>
                 </div> 
                 <div class="row boxEmail">
