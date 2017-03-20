@@ -68,14 +68,19 @@
                         <p>Email</p>
                     </div>
                     <div class="col-xs-12	col-sm-12	col-md-6 col-lg-6">
-                    <input type="email" class="input" id="email" name="email" required>
+                        <input type="email" class="input" id="email" name="email" required>
                     </div>
                 </div> 
             </form>
              <div class="button_container">
-                 <div class="messageError">Todos los campos son obligatorios (a excepción del CUIT)</div>
-                 <div id="summary"></div>
-                 <button class="button"  onclick="sendFrom()">Enviar</button>
+                 <div class="row">
+                    <div class="col-xs-6	col-sm-6	col-md-6 col-lg-6">
+                        <div class="messageError">Todos los campos son obligatorios (a excepción del CUIT)</div>
+                    </div>
+                    <div class="col-xs-6	col-sm-6	col-md-6 col-lg-6">
+                        <button class="button"  onclick="sendFrom()">Enviar</button>
+                    </div>
+                 </div>
              </div>
                
          </div>
