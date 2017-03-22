@@ -72,8 +72,11 @@ input[type="checkbox"] + label {
     box-shadow: 1px 1px 29px 0px rgba(189,189,189,1);
 }
 
-.form_card .division{
+.form_card .space{
     margin-bottom: 15px;
+}
+.form_card .bootstrap-select{
+    width: 100%;
 }
 .form_card .button_container{
     text-align: right;
@@ -122,9 +125,23 @@ input[type="checkbox"] + label {
     background: rgba(177, 42, 61, 0.1);
     border-left: 2px solid #b12a3d;
 }
-@media (max-width: 940px) {
-    .division .col-sm-6{
-        margin-bottom: 20px;
+
+/*modal*/
+.form_card .modal-content{
+    text-align: center;
+    font-size: 20px;
+}
+.form_card .modal-dialog{
+    margin-top: 150px;
+}
+
+@media (max-device-width: 940px) {
+    .form_card .space{
+        margin-bottom: 0px;
+        margin-top: 5px;
+    }
+    .space .col-sm-6{
+        margin-bottom: 30px;
     }
     .form_card .boxEmail {
         height: 108px;

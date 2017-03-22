@@ -1,15 +1,40 @@
 
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+    alert("hello weold")
+    $('.selectpicker').selectpicker('mobile',{
+        size: 5,
+        width: '100%' 
+    });
+}
+
+$('.selectpicker').selectpicker({
+  //style: 'btn-info',
+  size: 5,
+  width: '100%'
+});
+
+/*message error*/
+
 function errorMessage(ageData){
     $(".messageError").css("display", "blok").fadeIn(600);
+
     console.log("ERROR SEND");
 
     if(ageData){
         $(".ageError").fadeOut(200);
-    }else if($("#age").val()){
+    }else if($("#age").val() != undefined){
         $(".ageError").css("display", "blok").fadeIn(200);
-    }else{
+    }else{ };
+}
 
-    };
+/*onResetForm*/
+
+function onResetForm(){
+    $("#validationForm").validate().resetForm();
+
+    document.getElementById("validationForm").reset();
+
+    $(".ageError , .messageError").fadeOut(200);
 }
 
 // send form
@@ -108,12 +133,16 @@ function sendFrom(){
             /*
             algoritmo
             */
+            onResetForm();
+             $('#messageStatusForm').modal('show');
+
         }else{
             errorMessage(ageData);
          };
 }
 
 /*childrenNumber validation*/
+
 var childrenNumber =$("#childrenNumber");
 childrenNumber.prop('disabled', true);
 
