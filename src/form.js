@@ -49,7 +49,7 @@ function sendFrom(){
                     minlength:8
                 },
                 CUIT:{
-                    required:false,
+                    required:true,
                     maxlength:11,
                     minlength:11
                 },
@@ -87,7 +87,8 @@ function sendFrom(){
                     digits: true
                 },
                 salary:{
-                    digits: true
+                    digits: true,
+                    range: [7000, 100000]
                 },
                 age:{
                     range: [18, 90]
